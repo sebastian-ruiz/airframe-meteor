@@ -8,9 +8,8 @@
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
   "dependencies": {
-    "@babel/runtime": "^7.8.4",
-    "meteor-node-stubs": "^1.0.0",
     "@babel/polyfill": "^7.4.4",
+    "@babel/runtime": "^7.8.4",
     "@owczar/dashboard-style--airframe": "^0.1.13",
     "ag-grid-community": "^21.0.1",
     "ag-grid-react": "^21.0.1",
@@ -18,7 +17,9 @@
     "faker": "^4.1.0",
     "font-awesome": "^4.7.0",
     "holderjs": "^2.9.6",
+    "indexof": "0.0.1",
     "lodash": "^4.17.11",
+    "meteor-node-stubs": "^1.0.0",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
     "numeral": "^2.0.6",
@@ -49,7 +50,7 @@
     "react-toggle": "^4.0.2",
     "react-universal-component": "^4.0.0",
     "reactstrap": "^8.0.0",
-    "recharts": "^1.6.2",
+    "recharts": "^1.8.5",
     "text-mask-addons": "^3.8.0",
     "uuid": "^3.3.2"
   },

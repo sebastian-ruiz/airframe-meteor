@@ -10,9 +10,6 @@ import {
 import { HeaderMain } from "../../components/HeaderMain";
 import { HeaderDemo } from "../../components/HeaderDemo";
 
-import image1 from './images/image-1.jpg';
-import image2 from './images/image-2.jpg';
-
 
 export const CropImage = () => (
     <Container>
@@ -27,7 +24,7 @@ export const CropImage = () => (
                 subTitle="Default configuration of the crop component."
             />
             <ExampleProvider
-                src={ image1 }
+                src="/images/cropImageTest/image-1.jpg"
             />
         </div>
         <div className="mt-4">
@@ -44,7 +41,7 @@ export const CropImage = () => (
                 )}
             />
             <ExampleProvider
-                src={ image2 }
+                src="/images/cropImageTest/image-2.jpg"
                 cropProps={{
                     minWidth: 30,
                     maxWidth: 60,
