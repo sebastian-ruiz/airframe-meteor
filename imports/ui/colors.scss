@@ -1,0 +1,22 @@
+@import "./styles/variables";
+
+export {
+    @each $name, $color in $dashboard-colors {
+        #{$name}: $color
+    }
+}
+
+@each $name, $color in $dashboard-colors {
+    .fg-color--#{ $name } {
+        color: $color;
+    }
+    .bg-color--#{ $name } {
+        background-color: $color;
+    }
+}
+
+:export {
+    @each $name, $color in $dashboard-colors {
+        #{$name}: $color
+    }
+}
