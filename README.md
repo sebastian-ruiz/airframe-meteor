@@ -35,6 +35,26 @@ This **Airframe** project is a typical Webpack based React app, [React Router](h
 
 Run `npm install`. 
 
+Go to `cd imports/ui/packages` and create the following symlinks:
+
+```
+ln -s ../../../node_modules/ag-grid-community
+ln -s ../../../node_modules/bootstrap        
+ln -s ../../../node_modules/@owczar/dashboard-style--airframe 
+ln -s ../../../node_modules/font-awesome
+ln -s ../../../node_modules/rc-slider   
+ln -s ../../../node_modules/react-big-calendar  
+ln -s ../../../node_modules/react-bootstrap-table-next 
+ln -s ../../../node_modules/react-bootstrap-typeahead 
+ln -s ../../../node_modules/react-datepicker         
+ln -s ../../../node_modules/react-grid-layout 
+ln -s ../../../node_modules/react-image-crop 
+ln -s ../../../node_modules/react-quill     
+ln -s ../../../node_modules/react-toastify 
+ln -s ../../../node_modules/react-toggle  
+```
+
+
 In `imports/ui/packages/react-toastify/scss/main.scss` replace:
 
 ```
