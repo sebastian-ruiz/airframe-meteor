@@ -1,5 +1,4 @@
 {
-  "includePaths": [
-    "{}/node_modules/react-toastify/scss"
-  ]
+  "includePaths": [],
+  "sourceMapRoot": "http://localhost:3000"
 }

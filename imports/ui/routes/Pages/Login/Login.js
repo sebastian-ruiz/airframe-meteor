@@ -1,5 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import {
     Form,
@@ -16,7 +18,24 @@ import {
 import { HeaderAuth } from "../../components/Pages/HeaderAuth";
 import { FooterAuth } from "../../components/Pages/FooterAuth";
 
-const Login = () => (
+const Login = () => {
+    const history = useHistory();
+    const user = useTracker(() => Meteor.user());
+    if (user) {
+        // user is logged in, now redirect
+        history.push('/');
+    }
+    
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+  
+    const submit = e => {
+      e.preventDefault();
+  
+      Meteor.loginWithPassword(username, password);
+    };
+  
+    return (
     <EmptyLayout>
         <EmptyLayout.Section center>
             { /* START Header */}
@@ -25,21 +44,21 @@ const Login = () => (
             />
             { /* END Header */}
             { /* START Form */}
-            <Form className="mb-3">
+            <Form className="mb-3" onSubmit={submit}>
                 <FormGroup>
                     <Label for="emailAdress">
                         Email Adress
                     </Label>
-                    <Input type="email" name="email" id="emailAdress" placeholder="Enter email..." className="bg-white" />
+                    <Input type="email" name="email" id="emailAdress" placeholder="Enter email..." className="bg-white" onChange={e => setUsername(e.target.value)} />
                     <FormText color="muted">
-                        We&amp;ll never share your email with anyone else.
+                        We'll never share your email with anyone else.
                     </FormText>
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">
                         Password
                     </Label>
-                    <Input type="password" name="password" id="password" placeholder="Password..." className="bg-white" />
+                    <Input type="password" name="password" id="password" placeholder="Password..." className="bg-white" onChange={e => setPassword(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <CustomInput type="checkbox" id="rememberPassword" label="Remember Password" inline />
@@ -47,7 +66,7 @@ const Login = () => (
                 <ThemeConsumer>
                 {
                     ({ color }) => (
-                        <Button color={ color } block tag={ Link } to="/">
+                        <Button type="submit" color={ color } block>
                             Sign In
                         </Button>
                     )
@@ -70,6 +89,7 @@ const Login = () => (
             { /* END Footer */}
         </EmptyLayout.Section>
     </EmptyLayout>
-);
+    );
+};
 
 export default Login;

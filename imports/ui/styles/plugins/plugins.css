@@ -1,8 +1,8 @@
-@import "/imports/ui/packages/react-toggle/style.css";
-@import '/imports/ui/packages/react-bootstrap-typeahead/css/Typeahead.css';
-@import '/imports/ui/packages/react-bootstrap-typeahead/css/Typeahead-bs4.css';
-@import "/imports/ui/packages/react-quill/dist/quill.snow.css";
-@import "/imports/ui/packages/react-datepicker/dist/react-datepicker.css";
-@import "/imports/ui/packages/react-big-calendar/lib/css/react-big-calendar.css";
-@import "/imports/ui/packages/react-grid-layout/css/styles.css";
-@import "/imports/ui/packages/rc-slider/assets/index.css";
+@import "/node_modules/react-toggle/style.css";
+@import '/node_modules/react-bootstrap-typeahead/css/Typeahead.css';
+@import '/node_modules/react-bootstrap-typeahead/css/Typeahead-bs4.css';
+@import "/node_modules/react-quill/dist/quill.snow.css";
+@import "/node_modules/react-datepicker/dist/react-datepicker.css";
+@import "/node_modules/react-big-calendar/lib/css/react-big-calendar.css";
+@import "/node_modules/react-grid-layout/css/styles.css";
+@import "/node_modules/rc-slider/assets/index.css";

@@ -59,8 +59,9 @@ const NavbarMessages = (props) => (
                         <ListGroupItem tag={ ExtendedDropdown.Link } to="/apps/email-details" key={ index } action>
                             <Media>
                                 <Media left>
+                                {/* { faker.image.avatar() } */}
                                     <Avatar.Image
-                                        src={ faker.image.avatar() }
+                                        src='/images/avatars/1.jpg'
                                         className='mr-4'
                                     />
                                 </Media>

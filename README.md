@@ -1,6 +1,58 @@
-# Airframe Meteor
+# Airframe Meteor (FORK)
 
 ***This is a fork of the [Airframe React](https://github.com/0wczar/airframe-react) project by [Tomasz Owczarczyk](https://github.com/0wczar)**.
+
+# Installation
+
+Run `npm ci`. 
+
+I also had the problem of _includePaths is not iterable (https://github.com/Meteor-Community-Packages/meteor-scss/issues/273)
+
+What I did is as follows to fix it:
+
+1. got to `imports/ui/packages` and symlink all the node_modules that have scss:
+
+```
+ln -s ../../../node_modules/ag-grid-community
+ln -s ../../../node_modules/bootstrap        
+ln -s ../../../node_modules/@owczar/dashboard-style--airframe 
+ln -s ../../../node_modules/font-awesome
+ln -s ../../../node_modules/rc-slider   
+ln -s ../../../node_modules/react-big-calendar  
+ln -s ../../../node_modules/react-bootstrap-table-next 
+ln -s ../../../node_modules/react-bootstrap-typeahead 
+ln -s ../../../node_modules/react-datepicker         
+ln -s ../../../node_modules/react-grid-layout 
+ln -s ../../../node_modules/react-image-crop 
+ln -s ../../../node_modules/react-quill     
+ln -s ../../../node_modules/react-toastify 
+ln -s ../../../node_modules/react-toggle
+```
+
+2. For me react-toastify was especially broken and I had to do the following.
+In `node_modules/react-toastify/scss/main.scss` make the following change:
+
+```
+@import "{}/node_modules/react-toastify/scss/_variables.scss"; 
+// @import "variables";
+```
+
+3. In the root of your app:
+```
+mkdir packages
+cd packages
+git clone https://github.com/sebastian-ruiz/meteor-scss
+```
+This is a fork of meteor-scss I wrote that fixes this issue.
+
+
+Run `meteor`.
+
+## Notes
+
+Importing .scss files from .js files will add the css as an inline style and the sourcemap won't work.
+
+# Original README:
 
 High Quality **Dashboard / Admin / Analytics template** that works great on any smartphone, tablet or desktop. Available as **Open Source as MIT license.**
 
@@ -30,37 +82,3 @@ This **Airframe** project is a typical Webpack based React app, [React Router](h
 - **Responsive Design** - fully adapted to your application, exactly well presented on the desktop, a tablet or smartphone.
 - **120+ Unique Pages** designed to make use of them directly in your application.
 - **2 Starters** so that you can immediately work with the components that are necessary for your application.
-
-# Installation
-
-Run `npm install`. 
-
-Go to `cd imports/ui/packages` and create the following symlinks:
-
-```
-ln -s ../../../node_modules/ag-grid-community
-ln -s ../../../node_modules/bootstrap        
-ln -s ../../../node_modules/@owczar/dashboard-style--airframe 
-ln -s ../../../node_modules/font-awesome
-ln -s ../../../node_modules/rc-slider   
-ln -s ../../../node_modules/react-big-calendar  
-ln -s ../../../node_modules/react-bootstrap-table-next 
-ln -s ../../../node_modules/react-bootstrap-typeahead 
-ln -s ../../../node_modules/react-datepicker         
-ln -s ../../../node_modules/react-grid-layout 
-ln -s ../../../node_modules/react-image-crop 
-ln -s ../../../node_modules/react-quill     
-ln -s ../../../node_modules/react-toastify 
-ln -s ../../../node_modules/react-toggle  
-```
-
-
-In `imports/ui/packages/react-toastify/scss/main.scss` replace:
-
-```
-@import "{}/imports/ui/packages/react-toastify/scss/_variables.scss"; 
-// @import "variables";
-
-```
-
-Run `meteor`.

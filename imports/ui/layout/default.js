@@ -8,20 +8,6 @@ import {
     PageConfigConsumer,
 } from './../components';
 
-import './../styles/bootstrap.scss';
-import './../styles/main.scss';
-import './../styles/plugins/plugins.scss';
-// import './../styles/plugins/plugins.css';
-import "/imports/ui/packages/react-toggle/style.css";
-import '/imports/ui/packages/react-bootstrap-typeahead/css/Typeahead.css';
-import '/imports/ui/packages/react-bootstrap-typeahead/css/Typeahead-bs4.css';
-import "/imports/ui/packages/react-quill/dist/quill.snow.css";
-import "/imports/ui/packages/react-datepicker/dist/react-datepicker.css";
-import "/imports/ui/packages/react-big-calendar/lib/css/react-big-calendar.css";
-import "/imports/ui/packages/react-grid-layout/css/styles.css";
-import "/imports/ui/packages/rc-slider/assets/index.css";
-
-
 import {
     RoutedNavbars,
     RoutedSidebars,
