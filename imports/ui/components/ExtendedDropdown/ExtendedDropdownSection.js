@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 const ExtendedDropdownSection = (props) => {
     const { children, list, className, tag, ...otherProps } = props;
@@ -21,7 +22,7 @@ ExtendedDropdownSection.propTypes = {
     children: PropTypes.node,
     list: PropTypes.bool,
     className: PropTypes.string,
-    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+    tag: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object])
 };
 ExtendedDropdownSection.defaultProps = {
     tag: "div"
