@@ -58,9 +58,9 @@ const Reports = () => (
                                 Temperatures
                             </CardTitle>
                             <span className="ml-auto justify-content-start">
-                                <a href="javascript:;" className="ml-auto justify-content-start pr-2 text-decoration-none" id="TemperaturesTooltipSettings">
+                                <a href="#" onClick={ (e) => { e.preventDefault(); } } className="ml-auto justify-content-start pr-2 text-decoration-none" id="TemperaturesTooltipSettings">
                                     <i className="fa fa-fw fa-sliders"></i>
-                                </a> <a href="javascript:;" id="TemperaturesTooltipAdd" className="text-decoration-none">
+                                </a> <a href="#" onClick={ (e) => { e.preventDefault(); } } id="TemperaturesTooltipAdd" className="text-decoration-none">
                                     <i className="fa fa-fw fa-plus"></i>
                                 </a>
                             </span>
@@ -208,9 +208,9 @@ const Reports = () => (
                                 Usage
                             </CardTitle>
                             <span className="ml-auto justify-content-start">
-                                <a href="javascript:;" className="ml-auto justify-content-start pr-2 text-decoration-none" id="UsageTooltipSettings">
+                                <a href="#" onClick={ (e) => { e.preventDefault(); } } className="ml-auto justify-content-start pr-2 text-decoration-none" id="UsageTooltipSettings">
                                     <i className="fa fa-fw fa-sliders"></i>
-                                </a> <a href="javascript:;" id="UsageTooltipAdd" className="text-decoration-none">
+                                </a> <a href="#" onClick={ (e) => { e.preventDefault(); } } id="UsageTooltipAdd" className="text-decoration-none">
                                     <i className="fa fa-fw fa-plus"></i>
                                 </a>
                             </span>
@@ -400,9 +400,9 @@ const Reports = () => (
                                         Allocation
                                     </CardTitle>
                                     <span className="ml-auto justify-content-start">
-                                        <a href="javascript:;" className="ml-auto justify-content-start pr-2 text-decoration-none" id="AllocationTooltipSettings">
+                                        <a href="#" onClick={ (e) => { e.preventDefault(); } } className="ml-auto justify-content-start pr-2 text-decoration-none" id="AllocationTooltipSettings">
                                             <i className="fa fa-fw fa-sliders"></i>
-                                        </a> <a href="javascript:;" id="AllocationTooltipAdd" className="text-decoration-none">
+                                        </a> <a href="#" onClick={ (e) => { e.preventDefault(); } } id="AllocationTooltipAdd" className="text-decoration-none">
                                             <i className="fa fa-fw fa-plus"></i>
                                         </a>
                                     </span>
@@ -483,9 +483,9 @@ const Reports = () => (
                                         Cooling
                                     </CardTitle>
                                     <span className="ml-auto justify-content-start">
-                                        <a href="javascript:;" className="ml-auto justify-content-start pr-2 text-decoration-none" id="CoolingTooltipSettings">
+                                        <a href="#" onClick={ (e) => { e.preventDefault(); } } className="ml-auto justify-content-start pr-2 text-decoration-none" id="CoolingTooltipSettings">
                                             <i className="fa fa-fw fa-sliders"></i>
-                                        </a> <a href="javascript:;" id="CoolingTooltipAdd" className="text-decoration-none">
+                                        </a> <a href="#" onClick={ (e) => { e.preventDefault(); } } id="CoolingTooltipAdd" className="text-decoration-none">
                                             <i className="fa fa-fw fa-plus"></i>
                                         </a>
                                     </span>
@@ -575,9 +575,9 @@ const Reports = () => (
                                         Activity
                                     </CardTitle>
                                     <span className="ml-auto justify-content-start">
-                                        <a href="javascript:;" className="ml-auto justify-content-start pr-2" id="ActivityTooltipSettings">
+                                        <a href="#" onClick={ (e) => { e.preventDefault(); } } className="ml-auto justify-content-start pr-2" id="ActivityTooltipSettings">
                                             <i className="fa fa-fw fa-sliders"></i>
-                                        </a> <a href="javascript:;" id="ActivityTooltipAdd">
+                                        </a> <a href="#" onClick={ (e) => { e.preventDefault(); } } id="ActivityTooltipAdd">
                                             <i className="fa fa-fw fa-plus"></i>
                                         </a>
                                     </span>
