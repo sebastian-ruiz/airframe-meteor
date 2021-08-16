@@ -113,10 +113,15 @@ import { SidebarASidebar } from './../layout/components/SidebarASidebar';
 
 // fakeAuth.isAuthenticated === true replaced with true for now
 const PrivateRoute = ({ component: Component, ...rest }) => {
+
+    // something here is causing: Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
+
     const user = useTracker(() => Meteor.user());
-    const loggingIn = useTracker(() => Meteor.loggingIn());
+    // const user = useTracker(() => Meteor.user(), []);
+    // const user = true;
+    // const loggingIn = useTracker(() => Meteor.loggingIn());
     return (
-        <Route {...rest} render={(props) => (loggingIn || user
+        <Route {...rest} render={(props) => (user //(loggingIn || user
             ? <Component {...props} />
             : <Redirect to='/pages/login' />
         )} />

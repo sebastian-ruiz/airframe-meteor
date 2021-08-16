@@ -9,6 +9,7 @@ import Common from './../../common';
 import { MenuContext } from './MenuContext';
 
 class SidebarMenu extends React.Component {
+
     static propTypes = {
         children: PropTypes.node,
         currentUrl: PropTypes.string,
@@ -22,7 +23,7 @@ class SidebarMenu extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this._isMounted = false;
         this.state = {
             entries: this.entries = { }
         };
@@ -98,13 +99,16 @@ class SidebarMenu extends React.Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         this.sidebarAnimation = new Common.SideMenuAnimate();
         this.sidebarAnimation.assignParentElement(
             this.containerRef.current
         ); 
         
         setTimeout(() => {
-            this.setActiveEntries(true);
+            if (this._isMounted) {
+                this.setActiveEntries(true);
+            }
         }, 0);
     }
 
@@ -115,6 +119,7 @@ class SidebarMenu extends React.Component {
     }
 
     componentWillUnmount() {
+        this._isMounted = false;
         if (this.sidebarAnimation) {
             this.sidebarAnimation.destroy();
         }

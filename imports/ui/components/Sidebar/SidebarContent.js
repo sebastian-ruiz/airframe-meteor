@@ -17,13 +17,14 @@ export class SidebarContent extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this._isMounted = false;
         this.state = {
             entryAnimationFinished: false,
         };
     }
 
     componentDidMount() {
+        this._isMounted = true;
         this.sidebarEntryAnimate = new Common.SidebarEntryAnimate();
         this.slimSidebarAnimate = new Common.SlimSidebarAnimate();
         this.slimMenuAnimate = new Common.SlimMenuAnimate();
@@ -34,11 +35,14 @@ export class SidebarContent extends React.Component {
 
         this.sidebarEntryAnimate.executeAnimation()
             .then(() => {
-                this.setState({ entryAnimationFinished: true });
+                if(this._isMounted) {
+                    this.setState({ entryAnimationFinished: true });
+                }
             });
     }
 
     componentWillUnmount() {
+        this._isMounted = false;
         this.sidebarEntryAnimate.destroy();
         this.slimSidebarAnimate.destroy();
         this.slimMenuAnimate.destroy();

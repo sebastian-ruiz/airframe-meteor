@@ -11,7 +11,7 @@ import {
     DropdownToggle
 } from './../../components';
 
-const SERVICE_URL = "http://dashboards.webkom.co:8000";
+// const SERVICE_URL = "http://dashboards.webkom.co:8000";
 
 export class VersionSelector extends React.Component {
     static propTypes = {
@@ -33,27 +33,27 @@ export class VersionSelector extends React.Component {
         };
     }
 
-    async fetchVersions() {
-        const { dashboard } = this.props;
-        let versions;
-        try {
-            versions = await fetch(`${SERVICE_URL}/dashboards/versions`)
-                .then(response => response.json());
-        } catch(exc) {
-            this.setState({ isError: true })
-        }
-        const targetVersions = _.filter(versions, { dashboardName: dashboard });
+    // async fetchVersions() {
+    //     const { dashboard } = this.props;
+    //     let versions;
+    //     try {
+    //         versions = await fetch(`${SERVICE_URL}/dashboards/versions`)
+    //             .then(response => response.json());
+    //     } catch(exc) {
+    //         this.setState({ isError: true })
+    //     }
+    //     const targetVersions = _.filter(versions, { dashboardName: dashboard });
         
-        this.setState({ versions: targetVersions });
-    }
+    //     this.setState({ versions: targetVersions });
+    // }
 
     componentDidMount() {
-        this.fetchVersions();
+        // this.fetchVersions();
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.dashboard !== this.props.dashboard) {
-            this.fetchVersions();
+            // this.fetchVersions();
         }
     }
 
@@ -80,10 +80,10 @@ export class VersionSelector extends React.Component {
                         currentVersion ? (
                             render ? render(currentVersion) : (
                                 <React.Fragment>
-                                    React {currentVersion.version} <i className={`fa ${down ? "fa-angle-down" : "fa-angle-up"} ml-2`}></i>
+                                    React asdf <i className={`fa ${down ? "fa-angle-down" : "fa-angle-up"} ml-2`}></i>
                                     <br />
                                     <span className={ classNames('small', { 'sidebar__link--muted': sidebar }) }>
-                                        { moment(currentVersion.date).format("ddd, MMM DD, YYYY h:mm:ss A") }
+                                        {/* { moment(currentVersion.date).format("ddd, MMM DD, YYYY h:mm:ss A") } */}
                                     </span>
                                 </React.Fragment>
                             )
@@ -110,7 +110,7 @@ export class VersionSelector extends React.Component {
                                             { version.label } { version.version }
                                             <br />
                                             <span className="small">
-                                                { moment(version.date).format("ddd, MMM DD, YYYY h:mm:ss A") }
+                                                {/* { moment(version.date).format("ddd, MMM DD, YYYY h:mm:ss A") } */}
                                             </span>
                                         </span>
                                         {
