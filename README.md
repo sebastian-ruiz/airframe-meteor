@@ -6,51 +6,16 @@
 
 Run `npm ci`. 
 
-I also had the problem of _includePaths is not iterable (https://github.com/Meteor-Community-Packages/meteor-scss/issues/273)
-
-What I did is as follows to fix it:
-
-1. got to `imports/ui/packages` and symlink all the node_modules that have scss:
-
-```
-ln -s ../../../node_modules/ag-grid-community
-ln -s ../../../node_modules/bootstrap        
-ln -s ../../../node_modules/@owczar/dashboard-style--airframe 
-ln -s ../../../node_modules/font-awesome
-ln -s ../../../node_modules/rc-slider   
-ln -s ../../../node_modules/react-big-calendar  
-ln -s ../../../node_modules/react-bootstrap-table-next 
-ln -s ../../../node_modules/react-bootstrap-typeahead 
-ln -s ../../../node_modules/react-datepicker         
-ln -s ../../../node_modules/react-grid-layout 
-ln -s ../../../node_modules/react-image-crop 
-ln -s ../../../node_modules/react-quill     
-ln -s ../../../node_modules/react-toastify 
-ln -s ../../../node_modules/react-toggle
-```
-
-2. For me react-toastify was especially broken and I had to do the following.
-In `node_modules/react-toastify/scss/main.scss` make the following change:
-
-```
-@import "{}/node_modules/react-toastify/scss/_variables.scss"; 
-// @import "variables";
-```
-
-3. In the root of your app:
-```
-mkdir packages
-cd packages
-git clone https://github.com/sebastian-ruiz/meteor-scss
-```
-This is a fork of meteor-scss I wrote that fixes this issue.
-
-
-Run `meteor`.
+Run `npm start`.
 
 ## Notes
 
 Importing .scss files from .js files will add the css as an inline style and the sourcemap won't work.
+
+
+## To Do
+
+- redirect to page user was on before being redirected to login page.
 
 # Original README:
 

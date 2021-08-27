@@ -7,15 +7,15 @@ import CardHeader from './../CardHeader';
 import { Consumer } from './context';
 import classes from './AccordionHeader.scss';
 
-export const AccordionHeader = (props) => (
+export const AccordionHeader = (props) => {
+    return (
     <Consumer>
     {
         ({ onToggle }) => (
             <CardHeader
                 className={
                     classNames(
-                        props.className,
-                        classes.header
+                        props.className
                     )
                 }
                 onClick={ onToggle}
@@ -24,8 +24,8 @@ export const AccordionHeader = (props) => (
             </CardHeader>
         )   
     }
-    </Consumer>
-);
+    </Consumer>);
+};
 AccordionHeader.propTypes = {
     children: PropTypes.node,
     onClick: PropTypes.func,

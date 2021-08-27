@@ -14,12 +14,12 @@ import {
 } from './../routes';
 
 const favIcons = [
-    { rel: 'icon', type: 'image/x-icon', href: '' }, //require('./../images/favicons/favicon.ico')
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 
-    { rel: 'apple-touch-icon', sizes: '180x180', href: '' }, // require('./../images/favicons/apple-touch-icon.png')
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/images/favicons/apple-touch-icon.png' },
 
-    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '' }, //require('./../images/favicons/favicon-32x32.png')
-    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '' } //require('./../images/favicons/favicon-16x16.png')
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/../images/favicons/favicon-16x16.png' }
 ];
 
 class AppLayout extends React.Component {

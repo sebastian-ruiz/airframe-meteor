@@ -34,6 +34,7 @@ const Login = () => {
     useEffect(() => {
         if(user) {
             history.push('/')
+            // history.goBack() // this sticks us in an infinite loop
         }  
     })
 
