@@ -52,7 +52,7 @@
     "react-toggle": "^4.1.2",
     "react-universal-component": "^4.5.0",
     "reactstrap": "^8.9.0",
-    "recharts": "^2.0.9",
+    "recharts": "^2.1.14",
     "text-mask-addons": "^3.8.0",
     "uuid": "^3.3.2"
   },
